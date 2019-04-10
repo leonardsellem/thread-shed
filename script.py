@@ -140,3 +140,10 @@ for transaction in transactions_clean:
 #rint(customers)
 #print(sales)
 #print(threads_sold)
+
+#Determine the total value of the days sales
+
+total_sales = 0
+for sale in sales:
+    total_sales += float(sale[1:])
+#print(total_sales)
