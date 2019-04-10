@@ -147,3 +147,28 @@ total_sales = 0
 for sale in sales:
     total_sales += float(sale[1:])
 #print(total_sales)
+
+#How much thread of any specific color was sold?
+
+#print(threads_sold)
+colors = ['red','yellow','green','white','black','blue','purple']
+thread_sold_split = []
+for thread in threads_sold:
+    if thread in colors:
+        thread_sold_split.append(thread)
+    else:
+        thread_list = thread.split('&')
+        for thread in thread_list:
+            thread_sold_split.append(thread)
+#print(thread_sold_split)
+
+def color_count(color):
+    count = 0
+    for thread in thread_sold_split:
+        if thread == color:
+            count += 1
+    return count
+#print(color_count('white'))
+
+for thread in colors:
+    print("You sold {sales} {thread} threads".format(sales = color_count(thread), thread = thread))
